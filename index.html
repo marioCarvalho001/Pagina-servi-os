@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <title>Linking</title>
+</head>
+<body style="background: black;">
+  <style>
+  section{
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;  
+    }
+  </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+    .sect{
+      display: grid;
+      grid-template-columns: 1fr 1fr 8fr 1fr;
+      grid-template-areas: "... menu text ...";
+      gap: 100px;
+      flex-wrap: wrap;
+      
+    }
+    .sect p{
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      letter-spacing: .8px;
+    }
+
+    .line{
+      position: absolute;
+      height: 200px;
+      border-style: dashed;
+      border-color: #ffffff;
+      border-width: 0.1px;
+      z-index: -100;
+      right: 170px;
+      transform: rotate(-20deg);
+      opacity: 0.2;
+    }
+
+    .menu{
+      grid-area: menu;
+      position: relative;
+      display: grid;
+      grid-template-columns: 0px 100px 100px 100px 150px  150px 150px;
+      grid-template-rows: 50px  70px  80px 80px  70px  70px 70px  70px  45px;
+      grid-template-areas: 
+      " ... ... ... ... ... des des"
+      " ... ... ... soc soc soc ... "
+      " ... ... vid vid vid img img "
+      " ... mark mark mark mark img img "
+      " ... off off off off img img"
+      " brand brand brand brand brand img img"
+      " ... ... traf traf traf traf ..."
+      " ... ... ... ... rd rd rd"
+      " ... ... ... ... ... seo seo"
+      
+      ;
+    }
+    .des{
+      grid-area: des;
+      position: relative;
+    }
+    .soc{
+      grid-area: soc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 50px;
+      position: relative;
+    }
+    .soc .line{
+      transform: rotate(-45deg);
+      height: 260px;
+      bottom: -210px;
+      right: 50px;
+    }
+    .vid{
+      grid-area: vid;
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      position: relative;
+    }
+    .vid .line{
+      height: 210px;
+      transform: rotate(-71deg);
+      bottom: -120px;
+      right: 0px;
+    }
+    .mark{
+      grid-area: mark;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 80px;
+      position: relative;
+    }
+    .mark .line{
+      height: 300px;
+      transform: rotate(-83deg);
+      bottom: -150px;
+      right: 10px;
+    }
+    .off{
+      grid-area: off;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 30px;
+      position: relative;
+    }
+    .off .line{
+      height: 300px;
+      transform: rotate(-92deg);
+      bottom: -115px;
+      right: 0px;
+    }
+    .brand{
+      grid-area: brand;
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      margin-right: 50px;
+      position: relative;
+    }
+    .brand .line{
+      height: 200px;
+      transform: rotate(-110deg);
+      bottom: -50px;
+      right: -40px;
+    }
+    .traf{
+      grid-area: traf;
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      margin-right: 160px;
+      position: relative;
+    }
+    .traf .line{
+      height: 150px;
+      transform: rotate(60deg);
+      bottom: -10px;
+      right: -30px;
+    }
+    .rd{
+      grid-area: rd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 180px;
+      position: relative;
+    }
+    .rd .line{
+      height: 240px;
+      transform: rotate(-140deg);
+      bottom: 20px;
+      right: 0px;
+    }
+    .seo{
+      grid-area: seo;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      margin-left: 70px;
+      position: relative;
+    }
+    .seo .line{
+      height: 200px;
+      transform: rotate(20deg);
+      bottom: 15px;
+      right: 160px;
+    }
+    
+    .icon{
+      grid-area: img;
+    }
+    .fundo{
+      position: relative;
+    }
+    .fundo img{
+      width: 350px;
+    }
+    .logo{
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      right: 40px;
+      bottom: 230px;
+    }
+    .logo img{
+      width: 130px;
+      height: 130px;
+    }
+
+    .but{
+      height: 45px;
+      padding: 10px 30px;
+      margin: none;
+      border: none;
+      background: #131313;
+      box-shadow: inset 0px 1.20603px 2.41207px #3A3A3A;
+      border-radius: 60.3017px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+      color: #3A3A3A;
+      cursor: pointer;
+    }
+    .but{
+      margin: 0;
+      color: white;
+      font-size: 16px;
+    }
+  </style>
+  <style>
+    .texto_servicos{
+      grid-area: text;
+      max-width: 550px;
+      height: 600px;
+      color: #ffffff;
+      overflow: hidden;
+    }
+    .cont{
+      height: 250px;
+      font-weight: 400;
+      font-size: 16px;
+      margin: 10px 0;
+    }
+    .texto_servicos h2 {
+      font-family: 'Poppins', Arial, Helvetica, sans-serif;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin: 10px 0 0 0;
+      transition: height 2s;
+    }
+    .texto_servicos h3{
+      font-family: 'Fjalla One', sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      letter-spacing: .7px;
+      opacity: .6;
+      margin: 0;
+    }
+    .container_texto{
+      height: 605px;
+      display: grid;
+      grid-template-rows: 530px 70px;
+      align-items: flex-start;
+    }
+    .menu_text{
+      height: 530px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .arco, .inat{
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin: 5px 0;
+    }
+    .arco h2,.inat h2{
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 1s;
+    }
+    .inat .cont{
+      display: none;
+    }
+    
+    .arco span, .inat span{
+      font-family: 'Poppins';
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      margin-bottom: 2px;
+      color: #F8C200;
+    }
+    .texto_servicos .but{
+      padding: 5px 20px;
+    }
+    .container_texto{
+      display: none;
+    }
+  </style>
+  <style>
+    @media(max-width:1600px){
+      .sect{
+      display: grid;
+      grid-template-columns: 50px 1fr 8fr 1fr;
+      grid-template-areas: "... menu text ...";
+      gap: 50px;
+      flex-wrap: wrap;     
+    }
+    .but{
+      padding: 5px 30px;
+    }
+    .menu{
+      display: grid;
+      grid-template-columns: 0px 0px 100px 100px 150px  150px 150px;
+      grid-template-rows: 50px  50px  70px 70px  70px  70px 55px  50px  45px;
+    }
+    .des{
+      display: flex;
+      justify-content: right;
+      margin-right: 50px;
+    }
+    .des .line{
+      transform: rotate(-7deg);
+      height: 160px;
+      bottom: -120px;
+      right: 80px;
+    }
+    .mark{
+      align-items: center;
+      justify-content: left;
+      margin-left: 40px;
+    }
+    .mark .line{
+      transform: rotate(-81deg);
+      bottom: -140px;
+    }
+    .off{
+      justify-content: left;
+      margin-left: 30px;
+    }
+    .off .line{
+      height: 300px;
+      transform: rotate(-92deg);
+      bottom: -115px;
+      right: 0px;
+    }
+    .rd{
+      margin-right: 100px;
+    }
+    .rd .line{
+      height: 200px;
+      right: 90px;
+    }
+    .seo{
+      margin-left: 105px;
+    }
+    .seo .line{
+      height: 150px;
+      transform: rotate(13deg);
+      bottom: 15px;
+      right: 140px;
+    }
+    .logo{
+      bottom: 180px;
+    }
+    /*Parte de texto*/
+    .texto_servicos{
+      height: 500px;
+    }
+    .texto_servicos p{
+      font-size: 15px;
+      margin: 10px 0 0 0;
+    }
+    .texto_servicos h2 {
+      margin: 5px 0 0 0;
+    }
+    .texto_servicos h3{
+      font-size: 18px;
+    }
+    .container_texto{
+      height: 500px;
+      display: grid;
+      grid-template-rows: 430px 50px;
+      align-items: flex-start;
+    }
+    .cart{
+     display: flex;
+      flex-wrap: wrap;
+    } 
+    .cart p{
+      font-weight: 200;
+      font-size: 12px;
+      color: #F8C200;
+      margin: 0;
+    }
+    }
+    @media(max-width:1280px){
+      .sect{
+      display: grid;
+      grid-template-columns: 0px 1fr 8fr 25px;
+      grid-template-areas: "... menu text ...";
+      gap: 50px;
+      flex-wrap: wrap;
+      
+    }
+    }
+    @media(max-width:1024px){
+      .menu{
+      grid-template-rows: 50px  50px  60px 70px  70px  70px 55px  50px  45px;
+    }
+    .sect{
+      display: grid;
+      grid-template-columns: 1fr 8fr ;
+      grid-template-areas: " menu text ";
+      gap: 50px;
+      flex-wrap: wrap; 
+    }
+       
+    .soc{
+      margin-left: 150px;
+    }
+    .soc .line{
+      right: 30px;
+    }
+    .mark{
+      justify-content: center;
+      margin-left: 0px;
+    }
+    .off{
+      justify-content: center;
+      margin-left: 40px;
+    }
+    .brand{
+      margin-right: 0px;
+    }
+    .brand .line{
+      bottom: -40px;
+    }
+    .traf{
+      margin-right: 110px;
+    }
+    .rd{
+      margin-right: 50px;
+    }
+    .seo{
+      justify-content: right;
+      margin-right: 70px;
+    }
+    .seo .line{
+      height: 150px;
+      transform: rotate(10deg);
+      bottom: 15px;
+      right: 40px;
+    }
+    
+    }
+    @media(max-width:820px){
+    .sect{
+      display: flex; 
+      flex-direction: row;
+    }
+    .menu{
+      display: grid;
+      grid-template-columns: 0px 0px 50px 100px 150px  150px 150px;
+      grid-template-rows: 50px  50px  70px 70px  70px  70px 55px  50px  45px;
+    }
+    .soc{
+      margin-left: 80px;
+    }
+    .rd{
+      margin-right: 10px;
+    }
+    .rd .line{
+      right: 140px;
+    }
+    .texto_servicos{
+      max-width: 600px;
+      height: 800px;
+    }
+    .texto_servicos p{
+      font-size: 18px;
+    }
+    .texto_servicos h2 {
+      font-size: 28px;
+    }
+    .container_texto{
+      height: 800px;
+      grid-template-rows: 700px 100px;
+    }
+    .menu_text{
+      height: 600px;
+      overflow:visible;
+    }
+    .inat h2{
+      font-size: 18px;
+      font-weight: 500;
+    }
+    .inat span{
+      font-size: 12px;
+    }
+    }
+    @media(max-width:560px){
+      .sect{
+        width: 500px;
+      display: flex; 
+      justify-content: left;
+    }
+      .menu{
+      display: grid;
+      grid-template-columns: 50px 50px 50px 50px 50px  100px 100px;
+      grid-template-rows: 50px  50px  70px 70px  70px  70px 55px  50px  45px;
+      grid-template-areas: 
+      " ... ... ... ... des des des"
+      " ... ... soc soc soc soc ... "
+      " vid vid vid vid img img img "
+      " mark mark mark mark img img img "
+      " off off off off img img img"
+      " brand brand brand brand img img img"
+      " ... ... traf traf traf traf ..."
+      " ... ... ... ... rd rd rd"
+      " ... ... ... ... ... seo seo"
+      ;
+      
+    }
+    .fundo img{
+      width: 250px;
+    }
+    
+    .but{
+      padding: 0px 15px;
+    }
+    .but{
+      font-size: 12px ;
+      margin: 0;
+    }
+    .des{
+      margin-right: 70px;
+    }
+    .des .line{
+      transform: rotate(-7deg);
+      right: 50px;
+    }
+    .soc{
+      justify-content: left;
+      margin-left: 50px;
+    }
+    .soc .line{
+      height: 130px;
+      bottom: -110px;
+      right: 75px;
+    }
+    .vid{
+      justify-content: right;
+    }
+    .vid .line{
+      height: 180px;
+      transform: rotate(-70deg);
+      bottom: -80px;
+      right: 0px;
+    }
+    .mark{
+      justify-content: left;
+      margin-left: 10px;
+    }
+    .mark .line{
+      height: 150px;
+      transform: rotate(-85deg);
+      bottom: -50px;
+    }
+    .off{
+      justify-content: right;
+      margin-left: 0px;
+      margin-right: 15px;
+    }
+    .off .line{
+      height: 120px;
+      transform: rotate(-100deg);
+      bottom: -25px;
+      right: 0px;
+    }
+    .traf{
+      margin-right: 100px;
+    }
+    .traf .line{
+      transform: rotate(50deg);
+      bottom: 10px;
+      right: -30px;
+    }
+    .rd{
+      margin-right: 100px;
+      justify-content: center;
+    }
+    .rd .line{
+      transform: rotate(25deg);
+      right: 25px;
+    }
+    .seo{
+      margin-left: 105px;
+    }
+    .seo .line{
+      height: 300px;
+      transform: rotate(5deg);
+      bottom: 25px;
+      right: 13px;
+    }
+    .logo{
+      width: 30px;
+      height: 30px;
+      right: 143px;
+      bottom: 330px;
+    }
+    .logo img{
+      width: 100px;
+      height: 100px;
+    }
+    .texto_servicos{
+      max-width: 420px;
+      padding: 0 15px;
+    }
+    .texto_servicos p{
+      font-weight: 400;
+      font-size: 14px;
+      margin: 10px 0;
+    }
+    }
+  </style>
+
+  <style>
+  /*style do script, tudo relacionado a animação e cores de over está aqui*/
+  .des button:hover,.seo button:hover, .off button:hover{
+    background: #F8C200;
+    color: black;
+  }
+  .soc button:hover, .brand button:hover{
+    background: #B3343A;
+    color: black;
+  }
+  .vid button:hover, .traf button:hover{
+    background:#DC4D39;
+    color: black;
+  }
+  .mark button:hover, .rd button:hover{
+    background:#2060AA;
+    color: black;
+  }
+
+  .im {
+  animation: go-back 2s  alternate;
+ }
+
+  @keyframes go-back {
+    from {
+      opacity: .1;
+      transform: translateX(20px);
+      z-index: -10;
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  .arco{
+    display: flex;
+  }
+  .arco .cont{
+    height: 0;
+    display: none;
+    animation: arc 1s;
+    transition: 1s;
+  }
+  
+  
+  /*texto*/
+  .container_texto{
+    display: none;
+  }
+  .display{
+    display: grid;
+  }
+  .log_i{
+    display: none;
+  }
+  .im{
+    display: block;
+  }
+  /*animação de texto*/
+    .text{
+      display: flex;
+      flex-direction: column;
+    }
+    .inat{
+      animation: load 1.5s;
+    }
+    @keyframes load{
+    from {
+      opacity: .1;
+      transform: translateX(50px);
+      z-index: -10;
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  </style>
+
+
+  <section class="sect">
+  <div class="menu">
+    <div class="des">
+      <button class="but">
+        Web Design
+      </button>
+      <span class="line"></span>
+      <img class="img" src="" alt="">
+    </div>
+    <div class="soc">
+      <button class="but">
+        Redes Sociais
+      </button>
+      <span class="line"></span>
+      <img class="img" src="" alt="">
+    </div>
+    <div class="vid">
+      <button class="but">
+        Apresentação e Vídeo
+      </button>
+      <span class="line"></span>
+    </div>
+    <div class="mark">
+      <button class="but">
+        Inbound Marketing
+      </button>
+      <span class="line"></span>
+    </div>
+    <div class="off">
+      <button class="but">
+       Campanhas Offline
+      </button>
+      <span class="line"></span>
+    </div>
+    <div class="brand"> 
+      <button class="but">
+        Branding e Design
+      </button>
+      <span class="line"></span>
+    </div>
+    <div class="traf">
+      <button class="but">
+        Tráfego Pago
+      </button>
+      <span class="line"></span>
+    </div>
+    <div class="rd">
+      <button class="but">
+        Rd Station
+      </button>
+      <span class="line"></span>
+    </div>
+    <div class="seo">
+      <button class="but">
+        SEO
+      </button>
+      <span class="line"></span>
+    </div>
+
+    <div class="icon">
+      <span class="fundo">
+        <img class="log" src="http://mariocarvalho.tech/wp-content/uploads/2022/06/CentroPrincipal.png" alt="">
+      </span> 
+      <span class="logo">
+        <img class="log_i" src="http://mariocarvalho.tech/wp-content/uploads/2022/06/logonovobranco-2.png" alt="">
+        <img class="log_i im" src="http://mariocarvalho.tech/wp-content/uploads/2022/06/logonovobranco-2.png" alt="">
+      </span>
+    </div>
+
+  </div>
+  <div class="texto_servicos">
+    <h3>PRINCIPAIS CARACTERÍSTICAS</h3>
+    <div class="container_texto display">
+      
+      <div class="menu_text" >
+        <span class="tex text ">
+          <h2 class="mt">Web Design <span>ler mais ></span></h2>
+          <div class="cont">
+          <p>Quando bem elaborado, as suas vendas se multiplicam.</p>
+          <p>Nós, da Linking, entendemos e nos comprometemos com a importância de entregar um website de qualidade, eficiente e que atenda às necessidades da sua marca. Levando sempre em conta as suas demandas, seus objetivos e o seu público-alvo podemos desenvolver as melhores estratégias de atuação.</p>
+          <p>A Linking possui um time de especialistas prontos para pensar nas melhores soluções, práticas de mercado e tecnologias inovadoras para Web Design!</p>
+        </div>
+        </span>
+        <span class="tex inat">
+          <h2 class="mt">Criação de Sites <span>ler mais ></span></h2>  
+          <div class="cont">      
+          <p>o seu website precisa atender seu público, inspirá-lo e ter uma ótima performance em sites de busca como o Google. Para isso, a Linking oferece soluções práticas e inovadoras que lhe tragam uma forte presença na web com um site moderno, totalmente personalizado e exclusivo.</p></div> 
+        </span>
+        <span class="tex inat">
+          <h2 class="mt">Criação de Landing Pages <span>ler mais ></span></h2>
+          <div class="cont">
+          <p>o seu website precisa atender seu público, inspirá-lo e ter uma ótima performance em sites de busca como o Google. Para isso, a Linking oferece soluções práticas e inovadoras que lhe tragam uma forte presença na web com um site moderno, totalmente personalizado e exclusivo.</p></div>
+        </span>
+        <span class="tex inat">
+          <h2 class="mt">Criação de E-commerce <span>ler mais ></span></h2>
+          <div class="cont">
+          <p>o seu website precisa atender seu público, inspirá-lo e ter uma ótima performance em sites de busca como o Google. Para isso, a Linking oferece soluções práticas e inovadoras que lhe tragam uma forte presença na web com um site moderno, totalmente personalizado e exclusivo.</p></div>
+        </span>
+        
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+    var bot = document.querySelectorAll('.log_i')
+    var compl = 'CentroPrincipal.png'
+    var but = document.querySelectorAll('.but')
+    var text = document.querySelectorAll('.container_texto')
+    var menu_text = document.querySelectorAll('.mt')
+    var cleanT = document.querySelectorAll('.tex')
+
+
+    function arco(o){
+      o.forEach((b)=>{
+        b.classList.remove('arco')
+      })
+      var ed = document.querySelector('.text')
+      ed.classList.add('arco')
+      
+    }
+
+    function remov(o,i,cls, re = ' '){
+      arco(o)
+      o.forEach((b)=>{
+        b.classList.remove(cls)
+        if(re !== ' '){
+          b.classList.add(re)
+        }
+      })
+      if(re !== ' '){
+        o[i].classList.remove(re)
+        document.querySelector('.arco').classList.remove('inat')
+      }
+      o[i].classList.add(cls)
+      
+    }
+    
+    but.forEach((a, i)=>{
+      a.addEventListener('click', ()=>{
+        remov(bot,i, 'im')
+        remov(text, i, 'display')
+        remov(inat, i, 'inat')
+      })
+      
+    })
+    menu_text.forEach((a, i)=>{
+        a.addEventListener('click',()=>{
+          remov(cleanT, i, 'text', 'inat')
+        })
+    })
+
+    
+  //texto
+
+  var inat = document.querySelectorAll('inat')
+    
+</script>
+</body>
+</html>
