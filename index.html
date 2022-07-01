@@ -231,11 +231,19 @@
       overflow: hidden;
     }
     .cont{
-      height: 250px;
+      height: 0px;
       font-weight: 400;
       font-size: 16px;
-      margin: 10px 0;
+      margin: 10px 0;     
     }
+    .one{
+      overflow: hidden;
+      height: 0px;
+      transition: height 2s;
+    }
+    .inat .cont{
+      display: none;
+    } 
     .texto_servicos h2 {
       font-family: 'Poppins', Arial, Helvetica, sans-serif;
       font-weight: 700;
@@ -253,31 +261,28 @@
     }
     .container_texto{
       height: 605px;
-      display: grid;
-      grid-template-rows: 530px 70px;
+      display: flex;
+      flex-direction: column;
       align-items: flex-start;
     }
     .menu_text{
-      height: 530px;
+      height: 600px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
     }
     
-    .arco, .inat{
+    .inat{
       display: flex;
       flex-direction: column;
       gap: 15px;
       margin: 5px 0;
     }
-    .arco h2,.inat h2{
+    .arco h2, .inat h2{
       font-size: 14px;
       font-weight: 700;
       cursor: pointer;
       transition: 1s;
-    }
-    .inat .cont{
-      display: none;
     }
     
     .arco span, .inat span{
@@ -657,21 +662,47 @@
   }
   .arco{
     display: flex;
+    flex-direction: column;
   }
   .arco .cont{
-    height: 0;
-    display: none;
-    animation: arc 1s;
-    transition: 1s;
+    overflow: hidden;
+    height: 0px;
+    transition: height .8s ;
+  }
+  .text .doble{
+    overflow: hidden;
+    height: 300px;
+    transition: height 1.5s;
+  }
+  .text .one {
+    overflow: hidden;
+    height: 140px;
+    transition: height 1s;
   }
   
-  
   /*texto*/
+  .text .mt{
+    font-size: 26px;
+  }
+  .text span{
+    display: none;
+  }
   .container_texto{
     display: none;
   }
   .display{
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    animation: slid 1.5s;
+  }
+  @keyframes slid{
+    from{
+      transform: translateX(100px);
+      opacity: .5;
+    }
+    to{
+      transform: translateX(0px);
+    }
   }
   .log_i{
     display: none;
@@ -680,23 +711,7 @@
     display: block;
   }
   /*animação de texto*/
-    .text{
-      display: flex;
-      flex-direction: column;
-    }
-    .inat{
-      animation: load 1.5s;
-    }
-    @keyframes load{
-    from {
-      opacity: .1;
-      transform: translateX(50px);
-      z-index: -10;
-    }
-    to {
-      transform: translateX(0);
-    }
-  }
+  
   </style>
 
 
@@ -775,27 +790,67 @@
     <div class="container_texto display">
       
       <div class="menu_text" >
-        <span class="tex text ">
+        <span class="tex text">
           <h2 class="mt">Web Design <span>ler mais ></span></h2>
-          <div class="cont">
+          <div class="cont doble">
           <p>Quando bem elaborado, as suas vendas se multiplicam.</p>
           <p>Nós, da Linking, entendemos e nos comprometemos com a importância de entregar um website de qualidade, eficiente e que atenda às necessidades da sua marca. Levando sempre em conta as suas demandas, seus objetivos e o seu público-alvo podemos desenvolver as melhores estratégias de atuação.</p>
           <p>A Linking possui um time de especialistas prontos para pensar nas melhores soluções, práticas de mercado e tecnologias inovadoras para Web Design!</p>
+          
         </div>
         </span>
-        <span class="tex inat">
+        <span class="tex arco inat">
           <h2 class="mt">Criação de Sites <span>ler mais ></span></h2>  
-          <div class="cont">      
+          <div class="cont one">      
           <p>o seu website precisa atender seu público, inspirá-lo e ter uma ótima performance em sites de busca como o Google. Para isso, a Linking oferece soluções práticas e inovadoras que lhe tragam uma forte presença na web com um site moderno, totalmente personalizado e exclusivo.</p></div> 
         </span>
-        <span class="tex inat">
+        <span class="tex arco inat">
           <h2 class="mt">Criação de Landing Pages <span>ler mais ></span></h2>
-          <div class="cont">
+          <div class="cont one">
           <p>o seu website precisa atender seu público, inspirá-lo e ter uma ótima performance em sites de busca como o Google. Para isso, a Linking oferece soluções práticas e inovadoras que lhe tragam uma forte presença na web com um site moderno, totalmente personalizado e exclusivo.</p></div>
         </span>
         <span class="tex inat">
           <h2 class="mt">Criação de E-commerce <span>ler mais ></span></h2>
-          <div class="cont">
+          <div class="cont one">
+          <p>o seu website precisa atender seu público, inspirá-lo e ter uma ótima performance em sites de busca como o Google. Para isso, a Linking oferece soluções práticas e inovadoras que lhe tragam uma forte presença na web com um site moderno, totalmente personalizado e exclusivo.</p></div>
+        </span>
+        
+      </div>
+
+    </div>
+    <div class="container_texto ">
+      
+      <div class="menu_text" >
+        <span class="tex text">
+          <h2 class="mt">Redes Sociais<span> ler mais ></span></h2>
+          <div class="cont doble">
+          <p>Buscando resultados e presença digital por meio das redes sociais? Esse é o desejo de toda empresa! Porém, essa ótima estratégia deve ser tratada com muito cuidado. É preciso pensar com cautela a necessidade de estar presente em cada rede social e pensar conteúdos interessantes que gerem engajamento entre a sua empresa e o público.</p>
+          <p>Conhecer o seu público é extremamente importante para aumentar o alcance das suas redes. Para isso é imprescindível que tenhamos um planejamento adequado e um conteúdo relevante que o engaje. Conheça abaixo alguns dos serviços de redes sociais que Linking oferece:</p>
+          <p>●	conteúdo de acordo com a característica da rede
+            ●	frequência adequada de publicações
+            ●	estratégia de conteúdo e venda
+            ●	planejamento para crescimento orgânico
+            ●	monitoramento
+            ●	campanhas mensais para vendas
+            ●	SAC digital
+            ●	Social Ads
+            </p>
+          
+        </div>
+        </span>
+        <span class="tex arco inat">
+          <h2 class="mt">Criação de Sites <span>ler mais ></span></h2>  
+          <div class="cont one">      
+          <p>o seu website precisa atender seu público, inspirá-lo e ter uma ótima performance em sites de busca como o Google. Para isso, a Linking oferece soluções práticas e inovadoras que lhe tragam uma forte presença na web com um site moderno, totalmente personalizado e exclusivo.</p></div> 
+        </span>
+        <span class="tex arco inat">
+          <h2 class="mt">Criação de Landing Pages <span>ler mais ></span></h2>
+          <div class="cont one">
+          <p>o seu website precisa atender seu público, inspirá-lo e ter uma ótima performance em sites de busca como o Google. Para isso, a Linking oferece soluções práticas e inovadoras que lhe tragam uma forte presença na web com um site moderno, totalmente personalizado e exclusivo.</p></div>
+        </span>
+        <span class="tex inat">
+          <h2 class="mt">Criação de E-commerce <span>ler mais ></span></h2>
+          <div class="cont one">
           <p>o seu website precisa atender seu público, inspirá-lo e ter uma ótima performance em sites de busca como o Google. Para isso, a Linking oferece soluções práticas e inovadoras que lhe tragam uma forte presença na web com um site moderno, totalmente personalizado e exclusivo.</p></div>
         </span>
         
@@ -811,48 +866,56 @@
     var but = document.querySelectorAll('.but')
     var text = document.querySelectorAll('.container_texto')
     var menu_text = document.querySelectorAll('.mt')
-    var cleanT = document.querySelectorAll('.tex')
+    
 
-
-    function arco(o){
-      o.forEach((b)=>{
-        b.classList.remove('arco')
-      })
+    function remov(o,i,cls, re = ' '){ 
       var ed = document.querySelector('.text')
-      ed.classList.add('arco')
-      
-    }
-
-    function remov(o,i,cls, re = ' '){
-      arco(o)
       o.forEach((b)=>{
         b.classList.remove(cls)
-        if(re !== ' '){
-          b.classList.add(re)
-        }
+
       })
-      if(re !== ' '){
-        o[i].classList.remove(re)
-        document.querySelector('.arco').classList.remove('inat')
-      }
       o[i].classList.add(cls)
       
     }
+
+    function disp(mt, tru = ' '){
+      mt.forEach((a, i)=>{
+        a.classList.remove('mt')
+      })
+    }
+    
     
     but.forEach((a, i)=>{
       a.addEventListener('click', ()=>{
+        var dp = document.querySelector('.display')
+        var mt = document.querySelectorAll('.display .tex h2')
+       
         remov(bot,i, 'im')
         remov(text, i, 'display')
-        remov(inat, i, 'inat')
+
+        
       })
+
       
     })
+    function reText(a, b){
+      b.classList.remove('text')
+      b.classList.add('arco')
+      a.classList.remove('inat')
+      a.classList.add('text')
+    }
+    function acord(i){
+      var dp = document.querySelector('.display')
+      var dpp = dp.querySelector('.text')
+      var te = document.querySelectorAll('.tex')
+      reText(te[i], dpp)
+    }
     menu_text.forEach((a, i)=>{
         a.addEventListener('click',()=>{
-          remov(cleanT, i, 'text', 'inat')
+          acord(i)
         })
     })
-
+    
     
   //texto
 
